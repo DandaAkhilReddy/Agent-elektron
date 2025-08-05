@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import os
 from dotenv import load_dotenv
 
-from app.routes import auth, whisper, soapgen, files
+from app.routes import auth, whisper, soapgen, files, admin
 
 load_dotenv()
 
@@ -26,6 +26,7 @@ app.include_router(auth.router, prefix="/auth", tags=["authentication"])
 app.include_router(whisper.router, prefix="/transcribe", tags=["transcription"])
 app.include_router(soapgen.router, prefix="/soap", tags=["soap-generation"])
 app.include_router(files.router, prefix="/files", tags=["file-management"])
+app.include_router(admin.router, prefix="/admin", tags=["administration"])
 
 @app.get("/")
 async def root():
