@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-dark-900 text-white font-sans antialiased;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-glass;
+  }
+  
+  .glass-card:hover {
+    @apply shadow-glass-hover border-white/30;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg border border-white/20 backdrop-blur-sm transition-all duration-300 ease-in-out;
+  }
+  
+  .input-glass {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+  }
+  
+  .medical-gradient {
+    background: linear-gradient(135deg, #0d9488 0%, #14b8a6 50%, #2dd4bf 100%);
+  }
+  
+  .recording-indicator {
+    @apply w-4 h-4 bg-red-500 rounded-full animate-recording-pulse;
+  }
+  
+  .waveform-container {
+    @apply w-full h-16 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center;
+  }
+  
+  .soap-section {
+    @apply mb-6 last:mb-0;
+  }
+  
+  .soap-label {
+    @apply text-primary-400 font-semibold text-sm uppercase tracking-wider mb-2;
+  }
+  
+  .soap-content {
+    @apply text-gray-200 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .backdrop-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
